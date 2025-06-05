@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Login Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+    }
+
+    input {
+      margin: 10px 0;
+      padding: 8px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Simple check (in real apps, you must validate better and never show passwords)
+      if (name && email && password) {
+        document.getElementById("result").innerHTML =
+          "Hello " + name + "!<br>Your email is: " + email;
+      } else {
+        document.getElementById("result").innerHTML = "Please fill all fields.";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Login Form</h2>
+
+  <input type="text" id="name" placeholder="Enter your name"><br>
+  <input type="email" id="email" placeholder="Enter your email"><br>
+  <input type="password" id="password" placeholder="Enter your password"><br>
+
+  <button onclick="submitForm()">Submit</button>
+
+  <div id="result"></div>
+</body>
+</html>
